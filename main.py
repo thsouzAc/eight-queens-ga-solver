@@ -1,7 +1,6 @@
 from AlgoritmoGenetico import AlgoritmoGenetico
 
 def main():
-    # Configurações do Algoritmo Genético
     tamanho_populacao = 100
     max_geracoes = 1000
     taxa_mutacao = 0.05
@@ -13,6 +12,5 @@ def main():
     print(f"Genes: {melhor_solucao.genes}")
     print(f"Fitness: {melhor_solucao.fitness}")
 
-# Executar a função main
 if __name__ == "__main__":
     main()

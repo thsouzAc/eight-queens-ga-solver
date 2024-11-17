@@ -1,1 +1,1 @@
-![tabuleiro](assets/imag.png)
+![tabuleiro](assets/img.png)

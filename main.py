@@ -19,8 +19,8 @@ def increment_execution_count():
 
 # salva informações do melhor indivíduo em um arquivo
 
-def salvar_melhor_individuo(individuo, execucao):
-    with open("melhor_individuo.txt", "a") as f:  # modo "a" para anexar ao arquivo
+def salvar_melhores_individuos(individuo, execucao):
+    with open("execuções.txt", "a") as f:  # modo "a" para anexar ao arquivo
         f.write(f"Execução: {execucao}\n")
         f.write(f"ID: {individuo.id}, Geração: {individuo.geracao}, Genes: {individuo.genes}, Fitness: {individuo.fitness}\n")
         f.write("-" * 40 + "\n")
@@ -104,7 +104,7 @@ def algoritmo_genetico(tampop, itmax, txmut):
 
         if melhor_individuo.fitness == 28:
             print(f"\nSolução ótima encontrada na execução {execucao}, geração {iteracao}!")
-            salvar_melhor_individuo(melhor_individuo, execucao)  # salva em arquivo txt
+            salvar_melhores_individuos(melhor_individuo, execucao)  # salva em arquivo txt
             return populacao
 
         nova_populacao = []
@@ -126,7 +126,7 @@ def algoritmo_genetico(tampop, itmax, txmut):
         populacao = sorted(nova_populacao, key=lambda x: x.fitness, reverse=True)[:tampop]
 
     print(f"\nNúmero máximo de iterações atingido na execução {execucao}. Melhor solução:")
-    salvar_melhor_individuo(populacao[0], execucao)  # aqui, salvamos o individuo mesmo sem uma solução otima, onde fitness < 28
+    salvar_melhores_individuos(populacao[0], execucao)  # aqui, salvamos o individuo mesmo sem uma solução otima, onde fitness < 28
     return populacao
 
 
